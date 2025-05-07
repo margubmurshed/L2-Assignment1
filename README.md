@@ -7,7 +7,8 @@ Types and Interfaces both can used to define shape of an object. But here are so
 Interfaces can use 'extends' keyword to extend another interface.
 Example:
 
-<!--
+<pre>
+    ```ts
 
     interface DigitalInfo{
         email: string;
@@ -18,14 +19,16 @@ Example:
         name: string;
         address: string;
     }
- -->
+```
+</pre>
 
  The uppercode means that the properties from both interfaces are all required unless there are some optional ones.
 
 
  On the other hand, types use &(intersection) to extend properties from other types.
 
- <!-- 
+<pre>
+ ```ts
     type DigitalInfo = {
         email: string;
         contact: string;
@@ -38,7 +41,8 @@ Example:
 
     type Person = BasicInfo & Digital Info
 
-  -->
+  ```
+  </pre>
 
 
 # 2. Declaration Merging
