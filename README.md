@@ -47,7 +47,7 @@ interfaces use declaration merging. This means you can define interfaces using s
 
 Example:
 
-<!-- 
+```
 
     interface Person {
         name: string;
@@ -60,11 +60,11 @@ Example:
         contact: string
     }
 
- -->
+```
 
  now both of the person interface will be merged into one and will behave like all the properties are defined in one Person interface
 
- <!-- 
+```
     
     interface Person {
         name: string;
@@ -74,12 +74,12 @@ Example:
         contact: string;
     }
 
-  -->
+```
 
 
   types can't have declaration merging. Typescript throws error when it is done.
 
-  <!-- 
+```    
     type Person = {
         name: string;
         age: number;
@@ -91,18 +91,17 @@ Example:
         contact: string;
         // Error
     }
-   -->
+```
 
 
 # 3. Primitive aliasing
 
 With types, you can alias primitive types like string, number, boolean, null, undefined but you can't alias primitives with interfaces. You can only alias object type data like arrays and functions.
 
-<!-- 
+```
     type name = string;
     type age = number;
     type isAdmin = true;
- -->
+```
 
 
- 
