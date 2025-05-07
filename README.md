@@ -7,20 +7,7 @@ Types and Interfaces both can used to define shape of an object. But here are so
 Interfaces can use 'extends' keyword to extend another interface.
 Example:
 
-<pre>
-    ```ts
-
-    interface DigitalInfo{
-        email: string;
-        contact: string;
-    }
-
-    interface Person extends DigitalInfo {
-        name: string;
-        address: string;
-    }
-```
-</pre>
+<pre> ```ts interface DigitalInfo { email: string; contact: string; } interface Person extends DigitalInfo { name: string; address: string; } ``` </pre>
 
  The uppercode means that the properties from both interfaces are all required unless there are some optional ones.
 
