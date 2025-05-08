@@ -7,15 +7,25 @@ Types and Interfaces both can used to define shape of an object. But here are so
 Interfaces can use 'extends' keyword to extend another interface.
 Example:
 
-<pre> ```ts interface DigitalInfo { email: string; contact: string; } interface Person extends DigitalInfo { name: string; address: string; } ``` </pre>
+```ts
+
+    interface DigitalInfo{
+        email: string;
+        contact: string;
+    }
+
+    interface Person extends DigitalInfo {
+        name: string;
+        address: string;
+    }
+```
 
  The uppercode means that the properties from both interfaces are all required unless there are some optional ones.
 
 
  On the other hand, types use &(intersection) to extend properties from other types.
 
-<pre>
- ```ts
+```ts
     type DigitalInfo = {
         email: string;
         contact: string;
@@ -28,8 +38,7 @@ Example:
 
     type Person = BasicInfo & Digital Info
 
-  ```
-  </pre>
+```
 
 
 # 2. Declaration Merging
@@ -38,7 +47,7 @@ interfaces use declaration merging. This means you can define interfaces using s
 
 Example:
 
-```
+```ts
 
     interface Person {
         name: string;
@@ -55,8 +64,7 @@ Example:
 
  now both of the person interface will be merged into one and will behave like all the properties are defined in one Person interface
 
-```
-    
+```ts
     interface Person {
         name: string;
         age: number;
@@ -70,7 +78,7 @@ Example:
 
   types can't have declaration merging. Typescript throws error when it is done.
 
-```    
+```ts    
     type Person = {
         name: string;
         age: number;
