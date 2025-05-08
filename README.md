@@ -104,3 +104,43 @@ With types, you can alias primitive types like string, number, boolean, null, un
 ```
 
 
+
+
+
+# What is the use of the keyof keyword in TypeScript? Provide an example.
+
+keyof operator is used to extract keys of an object defining type of interface as an union. 
+For example:
+
+```ts
+    type Person = {
+        name: string;
+        age: number;
+        address: string;
+    }
+
+    type PersonKeys = keyof Person; // equivalent to => name | age | address
+```
+
+The most practical usecase of keyof operator would be extracting values from object properties safely
+
+```ts
+
+const getValueFromProperty = <T, K extends keyof T>(obj: T, key: K) : T[K] => obj[key];
+
+const person : Person = {
+    name: "Shakib",
+    age: 38
+}
+
+console.log(getValueFromProperty(person, "age")); // 38
+console.log(getValueFromProperty(person, "name")); // Shakib
+console.log(getValueFromProperty(person, "address")); // error
+
+```
+
+Here in the uppercode, there is a function named getValueFromProperty which extracts value from a object property. It is a generic function. T refers to the object that has been passed as an argument. "K extends keyof T" says that K will be "name | age" means K can't be other than name or age property. That makes keyof super useful because its dynamic and gives us autocomplete suggestions. Also it ensures type safety by preventing typos and works great with utility types.
+
+
+
+Thank you for reading my blog <3
