@@ -36,7 +36,7 @@ Example:
         address: string;
     }
 
-    type Person = BasicInfo & Digital Info
+    type Person = BasicInfo & DigitalInfo
 
 ```
 
@@ -97,7 +97,7 @@ Example:
 
 With types, you can alias primitive types like string, number, boolean, null, undefined but you can't alias primitives with interfaces. You can only alias object type data like arrays and functions.
 
-```
+```ts
     type name = string;
     type age = number;
     type isAdmin = true;
