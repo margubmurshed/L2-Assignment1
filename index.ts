@@ -7,45 +7,23 @@
         }
     }
 
-    console.log(formatString("Hello"))// Output: "HELLO"
-    console.log(formatString("Hello", true));   // Output: "HELLO"
-    console.log(formatString("Hello", false));  // Output: "hello"
 
-
-
-
-
-    type Item = {
+    
+    const filterByRating = (items: {
         title: string;
         rating: number;
-    }
-
-    const filterByRating = (items: Item[]): Item[] => {
+    }[]): {
+        title: string;
+        rating: number;
+    }[] => {
         return items.filter(item => item.rating >= 4)
     }
-
-    const books = [
-        { title: "Book A", rating: 4.5 },
-        { title: "Book B", rating: 3.2 },
-        { title: "Book C", rating: 5.0 }
-    ];
-
-    console.log(filterByRating(books));
-    // Output: [ { title: "Book A", rating: 4.5 }, { title: "Book C", rating: 5.0 } ]
-
-
-
 
 
 
     const concatenateArrays = <T>(...arrays: T[][]): T[] => {
         return arrays.reduce((previousValue: T[], currentValue: T[]) => previousValue.concat(currentValue), [])
     }
-
-    console.log(concatenateArrays(["a", "b"], ["c"]));       // Output: ["a", "b", "c"]
-    console.log(concatenateArrays([1, 2], [3, 4], [5]));     // Output: [1, 2, 3, 4, 5]
-
-
 
 
 
@@ -67,15 +45,6 @@
         }
     }
 
-    const myCar = new Car("Toyota", 2020, "Corolla");
-    console.log(myCar.getInfo());   // Output: "Make: Toyota, Year: 2020"
-    console.log(myCar.getModel());  // Output: "Model: Corolla"
-
-
-
-
-
-
 
 
     const processValue = (value: string | number): number => {
@@ -85,12 +54,6 @@
             return value * 2;
         }
     }
-
-    console.log(processValue("hello")); // Output: 5
-
-
-
-
 
 
 
@@ -103,21 +66,6 @@
         products.sort((a, b) => b.price - a.price);
         return products[0] || null;
     }
-
-    const products = [
-        { name: "Pen", price: 10 },
-        { name: "Notebook", price: 25 },
-        { name: "Bag", price: 50 }
-    ];
-
-    console.log(getMostExpensiveProduct(products));
-    // Output: { name: "Bag", price: 50 }
-
-
-
-
-
-
 
 
 
@@ -139,8 +87,6 @@
         }
     }
 
-    console.log(getDayType(Day.Monday));   // Output: "Weekday"
-    console.log(getDayType(Day.Sunday));   // Output: "Weekend"
 
 
     const squareAsync = async (n: number): Promise<number> => {
@@ -155,7 +101,4 @@
         })
     }
 
-
-    squareAsync(4).then(console.log);        // Output after 1s: 16
-    squareAsync(-3).catch(console.error);    // Output: Error: Negative number not allowed
 }
